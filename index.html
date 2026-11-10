@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11:11 | Golden Butterfly</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="particles"></canvas>
+
+    <main class="scene">
+
+        <div class="date">11 . 11 . 2026</div>
+
+        <h1 class="heading">
+            A LITTLE MAGIC
+            <span>FOR YOU</span>
+        </h1>
+
+        <p class="subtitle" id="subtitle">
+            Some beautiful things are meant to find you.
+        </p>
+
+        <div class="butterfly-stage" id="butterflyStage">
+
+            <div class="aura"></div>
+
+            <div class="butterfly" id="butterfly">
+
+<svg viewBox="0 0 400 360"
+     xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+
+    <linearGradient id="wingGold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#fff9d8"/>
+        <stop offset="20%" stop-color="#f5dc91"/>
+        <stop offset="48%" stop-color="#d5a13f"/>
+        <stop offset="75%" stop-color="#95601f"/>
+        <stop offset="100%" stop-color="#f8df99"/>
+    </linearGradient>
+
+    <linearGradient id="wingShadow" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#80501c"/>
+        <stop offset="50%" stop-color="#f5d88b"/>
+        <stop offset="100%" stop-color="#a66c24"/>
+    </linearGradient>
+
+    <radialGradient id="wingLight">
+        <stop offset="0%" stop-color="#fff8d8" stop-opacity=".9"/>
+        <stop offset="100%" stop-color="#d6a34d" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="bodyGold" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#8e5b20"/>
+        <stop offset="40%" stop-color="#fff0a8"/>
+        <stop offset="70%" stop-color="#c38b32"/>
+        <stop offset="100%" stop-color="#fff1b8"/>
+    </linearGradient>
+
+    <filter id="butterflyGlow">
+        <feGaussianBlur stdDeviation="4" result="blur"/>
+        <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+    </filter>
+
+    <filter id="softGlow">
+        <feGaussianBlur stdDeviation="12"/>
+    </filter>
+
+</defs>
+
+
+<!-- Wing glow -->
+<ellipse cx="200" cy="170" rx="135" ry="100"
+         fill="#d8a33f" opacity=".12"
+         filter="url(#softGlow)"/>
+
+
+<!-- LEFT UPPER WING -->
+<g class="wing left-wing" filter="url(#butterflyGlow)">
+
+    <path d="
+        M195 174
+        C170 132 144 83 99 51
+        C70 29 35 31 25 57
+        C10 96 36 150 74 179
+        C103 202 143 194 195 174 Z"
+        fill="url(#wingGold)"
+        stroke="#f9e2a2"
+        stroke-width="2"/>
+
+    <path d="
+        M195 174
+        C165 144 129 98 99 51
+        C70 29 35 31 25 57
+        C10 96 36 150 74 179"
+        fill="url(#wingLight)" opacity=".5"/>
+
+    <!-- Natural wing veins -->
+    <g fill="none" stroke="#fff0b5"
+       stroke-width="1.5" opacity=".65">
+
+        <path d="M195 174 Q105 111 25 57"/>
+        <path d="M195 174 Q100 151 30 95"/>
+        <path d="M195 174 Q110 180 74 179"/>
+        <path d="M195 174 Q132 103 86 42"/>
+        <path d="M195 174 Q146 133 125 76"/>
+        <path d="M195 174 Q155 165 112 140"/>
+
+    </g>
+
+    <!-- Wing markings -->
+    <path d="M55 72 Q82 49 109 84"
+          fill="none" stroke="#9b6828"
+          stroke-width="3" opacity=".6"/>
+
+    <path d="M43 113 Q67 95 91 127"
+          fill="none" stroke="#fff3c9"
+          stroke-width="2" opacity=".7"/>
+
+    <circle cx="61" cy="85" r="12"
+            fill="none" stroke="#fff0b0"
+            stroke-width="2"/>
+
+</g>
+
+
+<!-- RIGHT UPPER WING -->
+<g class="wing right-wing" filter="url(#butterflyGlow)">
+
+    <path d="
+        M205 174
+        C230 132 256 83 301 51
+        C330 29 365 31 375 57
+        C390 96 364 150 326 179
+        C297 202 257 194 205 174 Z"
+        fill="url(#wingGold)"
+        stroke="#f9e2a2"
+        stroke-width="2"/>
+
+    <g fill="none" stroke="#fff0b5"
+       stroke-width="1.5" opacity=".65">
+
+        <path d="M205 174 Q295 111 375 57"/>
+        <path d="M205 174 Q300 151 370 95"/>
+        <path d="M205 174 Q290 180 326 179"/>
+        <path d="M205 174 Q268 103 314 42"/>
+        <path d="M205 174 Q254 133 275 76"/>
+        <path d="M205 174 Q245 165 288 140"/>
+
+    </g>
+
+    <path d="M345 72 Q318 49 291 84"
+          fill="none" stroke="#9b6828"
+          stroke-width="3" opacity=".6"/>
+
+    <path d="M357 113 Q333 95 309 127"
+          fill="none" stroke="#fff3c9"
+          stroke-width="2" opacity=".7"/>
+
+    <circle cx="339" cy="85" r="12"
+            fill="none" stroke="#fff0b0"
+            stroke-width="2"/>
+
+</g>
+
+
+<!-- LEFT LOWER WING -->
+<g class="wing lower-left">
+
+    <path d="
+        M190 176
+        C151 171 111 177 94 217
+        C75 261 105 301 139 296
+        C165 291 183 230 195 183 Z"
+        fill="url(#wingShadow)"
+        stroke="#f5d58c"
+        stroke-width="2"/>
+
+    <g fill="none" stroke="#ffeab0"
+       stroke-width="1.4" opacity=".65">
+
+        <path d="M190 176 Q131 205 94 217"/>
+        <path d="M190 176 Q133 235 139 296"/>
+        <path d="M190 176 Q164 240 139 296"/>
+        <path d="M190 176 Q115 253 108 275"/>
+
+    </g>
+
+    <path d="M103 229 Q129 202 150 226"
+          fill="none" stroke="#fff0c0"
+          stroke-width="2"/>
+
+</g>
+
+
+<!-- RIGHT LOWER WING -->
+<g class="wing lower-right">
+
+    <path d="
+        M210 176
+        C249 171 289 177 306 217
+        C325 261 295 301 261 296
+        C235 291 217 230 205 183 Z"
+        fill="url(#wingShadow)"
+        stroke="#f5d58c"
+        stroke-width="2"/>
+
+    <g fill="none" stroke="#ffeab0"
+       stroke-width="1.4" opacity=".65">
+
+        <path d="M210 176 Q269 205 306 217"/>
+        <path d="M210 176 Q267 235 261 296"/>
+        <path d="M210 176 Q236 240 261 296"/>
+        <path d="M210 176 Q285 253 292 275"/>
+
+    </g>
+
+    <path d="M297 229 Q271 202 250 226"
+          fill="none" stroke="#fff0c0"
+          stroke-width="2"/>
+
+</g>
+
+
+<!-- Body -->
+<g filter="url(#butterflyGlow)">
+
+    <ellipse cx="200" cy="185" rx="8" ry="45"
+             fill="url(#bodyGold)"/>
+
+    <ellipse cx="200" cy="140" rx="11" ry="12"
+             fill="url(#bodyGold)"/>
+
+    <path d="M195 137 Q178 105 165 103"
+          fill="none" stroke="#e8c578"
+          stroke-width="2.5" stroke-linecap="round"/>
+
+    <path d="M205 137 Q222 105 235 103"
+          fill="none" stroke="#e8c578"
+          stroke-width="2.5" stroke-linecap="round"/>
+
+    <circle cx="165" cy="103" r="3" fill="#fff1b5"/>
+    <circle cx="235" cy="103" r="3" fill="#fff1b5"/>
+
+    <path d="M197 200 Q200 224 197 235"
+          stroke="#e9c77d" stroke-width="2"
+          fill="none"/>
+
+    <path d="M203 200 Q200 224 203 235"
+          stroke="#e9c77d" stroke-width="2"
+          fill="none"/>
+
+</g>
+
+</svg>
+
+</v>
+
+            </div>
+
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+
+        </div>
+
+        <p class="instruction" id="instruction">
+            TOUCH THE BUTTERFLY TO BEGIN
+        </p>
+
+        <section class="message-box" id="messageBox">
+
+            <div class="message-line"></div>
+
+            <div class="message-date">A SPECIAL MOMENT • 11:11</div>
+
+            <h2 id="receiver">For Someone Special</h2>
+
+            <p id="message"></p>
+
+            <div class="signature" id="signature"></div>
+
+            <button id="replay">EXPERIENCE AGAIN ↻</button>
+
+        </section>
+
+        <div class="countdown">
+            <span>THE MOMENT IS COMING</span>
+            <div id="timer">Loading...</div>
+        </div>
+
+        <footer>MADE OF GOLDEN MOMENTS ✦</footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
